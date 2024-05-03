@@ -25,9 +25,7 @@ def canUnlockAll(boxes):
     """
 
     n = len(boxes) - 1
-    c = 1
     open = [0]
-    close = set()
     for i in open:
         for j in boxes[i]:
             if j not in open and j <= n:
