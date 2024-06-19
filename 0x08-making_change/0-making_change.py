@@ -15,6 +15,8 @@ def makeChange(coins, total):
     count = 0
     value = total
     coins.sort(reverse=True)
+    star_index = 0
+
     while 1:
         for i in coins:
             if value - i > 0:
@@ -23,5 +25,6 @@ def makeChange(coins, total):
                 break
             elif value - i == 0:
                 return count + 1
-            elif count == len(coins) and coins[-1] == i:
+            elif count == len(coins) and coins[-1] == i and value - i < 0:
                 return -1
+            star_index += 1
