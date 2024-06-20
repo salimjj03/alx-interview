@@ -12,6 +12,10 @@ def makeChange(coins, total):
     """
     if total <= 0:
         return 0
+
+    if (coins is None or len(coins) == 0):
+        return -1
+
     count = 0
     value = total
     coins.sort(reverse=True)
